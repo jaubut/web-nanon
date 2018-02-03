@@ -3,31 +3,48 @@
     <title>Caca nanou</title>
     <link rel="stylesheet" href="./global.css">
     <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
     <script src="./index.js"></script>
   </head>
   <body>
     <div id="app">
+      <header>
+        <router-link to="/about">Go to Foo</router-link>
+        <router-link to="/bar">Go to Bar</router-link>
+      </header>
       <main>
-        <div class="caca">
-          <h1>Allo Nanou</h1>
-          <a href="about.html">about</a>
-          <p>Allo les amis de la ferme.</p>
-          <p>{{ message }}</p>
-          <input v-model="message" type="text">
-          <button @click="counter++">{{ counter }}fois</button>
-        </div>
+        <p>{{ message }}</p>
+        <input v-model="message" type="text">
+        <button @click="counter++">{{ counter }}fois</button>
+        <router-view></router-view>
       </main>
     </div>
     <script>
-      new Vue({
-        el: '#app',
+      const Foo = { template: `
+        <div class="caca">
+          <h1>About</h1>
+        </div>` }
+      const Bar = { template: `
+        <div class="caca">
+          <h1>Allo Nanou</h1>
+          <p>Allo les amis de la ferme.</p>
+        </div>` }
+      const routes = [
+        { path: '/about', component: Foo },
+        { path: '/bar', component: Bar }
+      ]
+      const router = new VueRouter({
+        routes 
+      })
+      const app = new Vue({
+        router,
         data () {
           return {
             message: 'allo je viens de la vue.',
             counter: 0
           }
         }
-      })
+      }).$mount('#app')
     </script>
   </body>
 </html>

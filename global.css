@@ -7,14 +7,20 @@
 html, body {
   margin: 0;
   padding: 0;
+  background: linear-gradient(13deg, rgb(22, 135, 237), rgb(20, 55, 90));
+  font-family: 'Muli', sans-serif;
+}
+header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5%;
 }
 main {
   display: flex;
+  flex-flow: column nowrap;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(13deg, rgb(22, 135, 237), rgb(20, 55, 90));
-  height: 100vh;
-  font-family: 'Muli', sans-serif;
 }
 .caca {
   display: flex;
