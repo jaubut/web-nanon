@@ -1,0 +1,63 @@
+:root {
+  --caca: #CDE7FE;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(13deg, rgb(22, 135, 237), rgb(20, 55, 90));
+  height: 100vh;
+  font-family: 'Muli', sans-serif;
+}
+.caca {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  height: inherit;
+}
+.caca h1 {
+  font-weight: 800;
+  font-size: 4rem;
+  color: var(--caca);
+}
+.caca p {
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: white;
+}
+.caca p::first-letter {
+  font-weight: 800;
+  font-size: 2rem;
+}
+a {
+  color: var(--caca);
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition: all ease-in-out .5s;
+  cursor: pointer;
+}
+a:hover {
+  color: red;
+  transform: translateX(5px);
+}
+button {
+  margin-top: 35px;
+  height: 100px;
+  width: 100px;
+  background: white;
+  color: var(--caca);
+  border-radius: 100%;
+  border: none;
+  transition: all ease-in-out .5s;
+}
+button:hover {
+  transform: scale(1.5);
+}
